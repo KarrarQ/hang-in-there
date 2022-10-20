@@ -17,6 +17,9 @@ var userImage = document.getElementById("poster-image-url")
 var userTitle = document.getElementById("poster-title")
 var userQuotes = document.getElementById("poster-quote")
 
+var savedPostersGrid = document.querySelector(".saved-posters-grid")
+
+
 // we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
@@ -181,11 +184,27 @@ function showNewView(){
   savedView.classList.add("hidden");
 }
 
+function displayPoster(){
+  var display = ""
+  for (var i=0; i< savedPosters.lenght;i++ ) {
+    display += `<article class = "mini-poster"> 
+    <img class="poster-img" id=${savedPosters[i].id} src="${savedPosters[i].imageURL}" alt="Nothing to see here">
+    <h2 class="poster-title">${savePoster[i].title}
+    </h2>
+    <h4 class="poster-quote">${savePoster[i].quote}
+    </h4>
+    </article>`
+  }
+  savedPostersGrid.innerHTML = display
+}
+
 
 
 
 function saveHelper(){
+  displayPoster();
   showSavedView();
+
 }
 
 

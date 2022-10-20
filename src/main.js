@@ -11,7 +11,11 @@ var savedView = document.querySelector(".saved-posters")
 var makeView = document.querySelector(".poster-form")
 var showMainBtn = document.querySelector(".show-main")
 var backMainBtn = document.querySelector(".back-to-main")
+var makePosterBtn = document.querySelector(".make-poster")
 
+var userImage = document.getElementById("poster-image-url")
+var userTitle = document.getElementById("poster-title")
+var userQuotes = document.getElementById("poster-quote")
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -119,11 +123,17 @@ window.addEventListener('load',showRandomPoster);
 randomBtn.addEventListener('click',showRandomPoster);
 // saveBtn.addEventListener('click',saveNewPoster);
 showSaveBtn.addEventListener('click',saveHelper);
-// makeFormBtn.addEventListener('click',showNewView);
+makeFormBtn.addEventListener('click',showNewView);
 showMainBtn.addEventListener('click',showHomeView );
-makeFormBtn.addEventListener('click',showNewView)
+backMainBtn.addEventListener('click', showHomeView );
+makePosterBtn.addEventListener('click', function(){
+  event.preventDefault();
+  myPoster(userImage.value, userTitle.value, userQuotes.value);
+  newPoster();
+  pushPoster();
+  showHomeView();
+})
 
-backMainBtn.addEventListener('click', showHomeView )
 
 
 
@@ -135,7 +145,10 @@ function showRandomPoster(){
     quotes[getRandomIndex(quotes)]
     )
   newPoster();
-  console.log(currentPoster)
+}
+
+function myPoster(newPoster,newTitle,newQuote){
+  currentPoster = new Poster(newPoster,newTitle,newQuote)
 }
 
 function newPoster(){
@@ -148,6 +161,7 @@ function pushPoster(){
   images.push(currentPoster.imageURL);
   titles.push(currentPoster.title)
   quotes.push(currentPoster.quote)
+
 }
 function showHomeView(){
   mainView.classList.remove("hidden");
@@ -166,6 +180,9 @@ function showNewView(){
   makeView.classList.remove("hidden");
   savedView.classList.add("hidden");
 }
+
+
+
 
 function saveHelper(){
   showSavedView();

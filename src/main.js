@@ -10,7 +10,7 @@ var mainView = document.querySelector(".main-poster")
 var savedView = document.querySelector(".saved-posters")
 var makeView = document.querySelector(".poster-form")
 var showMainBtn = document.querySelector(".show-main")
-var backMainBtn = document.querySelector("back-to-main")
+var backMainBtn = document.querySelector(".back-to-main")
 
 
 // we've provided you with some data to work with 👇
@@ -123,6 +123,7 @@ showSaveBtn.addEventListener('click',saveHelper);
 showMainBtn.addEventListener('click',showHomeView );
 makeFormBtn.addEventListener('click',showNewView)
 
+backMainBtn.addEventListener('click', showHomeView )
 
 
 

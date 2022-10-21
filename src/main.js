@@ -11,6 +11,14 @@ var savedView = document.querySelector(".saved-posters")
 var makeView = document.querySelector(".poster-form")
 var showMainBtn = document.querySelector(".show-main")
 var backMainBtn = document.querySelector(".back-to-main")
+var makePosterBtn = document.querySelector(".make-poster")
+var savedPostersGrid = document.querySelector(".saved-posters-grid")
+
+var userImage = document.getElementById("poster-image-url")
+var userTitle = document.getElementById("poster-title")
+var userQuotes = document.getElementById("poster-quote")
+
+
 
 
 // we've provided you with some data to work with 👇
@@ -115,28 +123,37 @@ var savedPosters = [];
 var currentPoster;
 
 // event listeners go here 👇
-window.addEventListener('load',showRandomPoster);
-randomBtn.addEventListener('click',showRandomPoster);
+window.addEventListener('load', showRandomPoster);
+randomBtn.addEventListener('click', showRandomPoster);
 // saveBtn.addEventListener('click',saveNewPoster);
-showSaveBtn.addEventListener('click',saveHelper);
-// makeFormBtn.addEventListener('click',showNewView);
-showMainBtn.addEventListener('click',showHomeView );
-makeFormBtn.addEventListener('click',showNewView)
+showSaveBtn.addEventListener('click', saveHelper);
+makeFormBtn.addEventListener('click', showNewView);
+showMainBtn.addEventListener('click', showHomeView );
+backMainBtn.addEventListener('click', showHomeView );
+makePosterBtn.addEventListener('click', function() {
+  event.preventDefault();
+  myPoster(userImage.value, userTitle.value, userQuotes.value);
+  newPoster();
+  pushPoster();
+  showHomeView();
+})
 
-backMainBtn.addEventListener('click', showHomeView )
 
 
 
 // functions and event handlers go here 👇
-function showRandomPoster(){
+function showRandomPoster() {
   currentPoster = new Poster(
     images[getRandomIndex(images)],
     titles[getRandomIndex(titles)],
     quotes[getRandomIndex(quotes)]
-    )
+    );
   newPoster();
-  console.log(currentPoster)
 }
+
+function myPoster(newPoster, newTitle, newQuote){
+  currentPoster = new Poster(newPoster,newTitle,newQuote)
+};
 
 function newPoster(){
   posterImage.src = currentPoster.imageURL;
@@ -148,6 +165,7 @@ function pushPoster(){
   images.push(currentPoster.imageURL);
   titles.push(currentPoster.title)
   quotes.push(currentPoster.quote)
+
 }
 function showHomeView(){
   mainView.classList.remove("hidden");
@@ -167,8 +185,27 @@ function showNewView(){
   savedView.classList.add("hidden");
 }
 
+function displayPoster(){
+  var display = ""
+  for (var i=0; i< savedPosters.lenght;i++ ) {
+    display += `<article class = "mini-poster"> 
+    <img class="poster-img" id=${savedPosters[i].id} src="${savedPosters[i].imageURL}" alt="Nothing to see here">
+    <h2 class="poster-title">${savePoster[i].title}
+    </h2>
+    <h4 class="poster-quote">${savePoster[i].quote}
+    </h4>
+    </article>`
+  }
+  savedPostersGrid.innerHTML = display
+}
+
+
+
+
 function saveHelper(){
+  displayPoster();
   showSavedView();
+
 }
 
 

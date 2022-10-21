@@ -35,6 +35,6 @@
 - Successfully collabrating with a partner.
 - Finished project before expected due date.
 - Stuck to DTR.
-### Challenge:
+### Challenges:
 - The most challenging part of the project was finding pure JS solutions to selecting the correct part of the page and applying the listeners we wanted.
 - Googling diffenent methods to help our JS.

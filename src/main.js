@@ -137,7 +137,7 @@ makePosterBtn.addEventListener('click', function() {
   pushPoster();
   showHomeView();
 })
-
+savedView.addEventListener('dblclick', deleteSaved);
 
 
 
@@ -202,6 +202,17 @@ function saveNewPoster(){
     savedPosters.push(currentPoster)
   }
 }
+
+function deleteSaved(event){
+  var posterID = parseInt(event.target.id)
+  for (var i=0; i<savedPosters.length;i++){
+    if (savedPosters[i].id === posterID){
+      savedPosters.splice(i,1)
+      saveHelper()
+    }
+  }
+}
+
 
 function saveHelper(){
   showSavedView();

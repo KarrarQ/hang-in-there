@@ -1,46 +1,40 @@
-# Hang In There
-
-A boilerplate repo. 
-
-## Set Up
-
-1. One teammate: fork this repository
-2. Clone down your new, forked repo
-3. cd into the repository
-4. Open it in your text editor
-5. Add all project partners and your assigned instructor as collaborators on the repository
-
-Project spec & rubric can be found [here](https://frontend.turing.io/projects/module-1/hang-in-there.html)
-
-To view your project:
-
-1. In your terminal, navigate to your project repo
-2. Run the command `open index.html`
-  
-______________________________________________________  
-# README Template  
-Before turning this project in, erase this line and everything above it and fill in the info below.  
-______________________________________________________  
-
 # Hang in There  
 
-### Abstract:
-[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
+### Introduction
+ Hang in There is a website that gives you a boost. Generate a poster with a random words of inspiration and uplifting images. Or, use your own pictures and favorite quotes to create a poster all on your own.
 
-### Installation Instructions:
-[//]: <> (What steps does a person have to take to get your app cloned down and running?)
+### How to Run This Page
+ 1- Fork this repo and clone it to your local repository.
+ 2- In terminal, cd into this directory.
+ 3- Run 'Open index.html' to open the page.
 
-### Preview of App:
-[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+### Deployed page
+[View Hang In THere Poster Generator](https://karrarq.github.io/hang-in-there/)
+
+### Screenshots of Webpage
+![image0](./readme-imgs/Froggy.png)
+![image1](./readme-imgs/Saved.png)
 
 ### Context:
-[//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
+- MOD1 Students
+- 3 Days total.
+- Since the HTML and Css were provided to start working on the project, It let us see how JS works together with those elements.
 
 ### Contributors:
-[//]: <> (Who worked on this application? Link to their GitHubs.)
+-[Patt Sookmark](https://github.com/pattpjy)
+-[Karrar Qasim](https://github.com/KarrarQ)
 
-### Learning Goals:
-[//]: <> (What were the learning goals of this project? What tech did you work with?)
+### Technologies Used
+#### Hang in There utilizes the following technologies
+- Javascript
+- HTML
+- CSS
+- manipulate and update elements on the DOM
 
-### Wins + Challenges:
-[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
+### Wins
+- Successfully collabrating with a partner.
+- Finished project before expected due date.
+- Stuck to DTR.
+### Challenge:
+- The most challenging part of the project was finding pure JS solutions to selecting the correct part of the page and applying the listeners we wanted.
+- Googling diffenent methods to help our JS.

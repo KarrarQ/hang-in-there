@@ -12,12 +12,13 @@ var makeView = document.querySelector(".poster-form")
 var showMainBtn = document.querySelector(".show-main")
 var backMainBtn = document.querySelector(".back-to-main")
 var makePosterBtn = document.querySelector(".make-poster")
+var savedPostersGrid = document.querySelector(".saved-posters-grid")
 
 var userImage = document.getElementById("poster-image-url")
 var userTitle = document.getElementById("poster-title")
 var userQuotes = document.getElementById("poster-quote")
 
-var savedPostersGrid = document.querySelector(".saved-posters-grid")
+
 
 
 // we've provided you with some data to work with 👇
@@ -122,14 +123,14 @@ var savedPosters = [];
 var currentPoster;
 
 // event listeners go here 👇
-window.addEventListener('load',showRandomPoster);
-randomBtn.addEventListener('click',showRandomPoster);
+window.addEventListener('load', showRandomPoster);
+randomBtn.addEventListener('click', showRandomPoster);
 // saveBtn.addEventListener('click',saveNewPoster);
-showSaveBtn.addEventListener('click',saveHelper);
-makeFormBtn.addEventListener('click',showNewView);
-showMainBtn.addEventListener('click',showHomeView );
+showSaveBtn.addEventListener('click', saveHelper);
+makeFormBtn.addEventListener('click', showNewView);
+showMainBtn.addEventListener('click', showHomeView );
 backMainBtn.addEventListener('click', showHomeView );
-makePosterBtn.addEventListener('click', function(){
+makePosterBtn.addEventListener('click', function() {
   event.preventDefault();
   myPoster(userImage.value, userTitle.value, userQuotes.value);
   newPoster();
@@ -141,18 +142,18 @@ makePosterBtn.addEventListener('click', function(){
 
 
 // functions and event handlers go here 👇
-function showRandomPoster(){
+function showRandomPoster() {
   currentPoster = new Poster(
     images[getRandomIndex(images)],
     titles[getRandomIndex(titles)],
     quotes[getRandomIndex(quotes)]
-    )
+    );
   newPoster();
 }
 
-function myPoster(newPoster,newTitle,newQuote){
+function myPoster(newPoster, newTitle, newQuote){
   currentPoster = new Poster(newPoster,newTitle,newQuote)
-}
+};
 
 function newPoster(){
   posterImage.src = currentPoster.imageURL;

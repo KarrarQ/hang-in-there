@@ -12,7 +12,7 @@ var makeView = document.querySelector(".poster-form")
 var showMainBtn = document.querySelector(".show-main")
 var backMainBtn = document.querySelector(".back-to-main")
 var makePosterBtn = document.querySelector(".make-poster")
-var savedPostersGrid = document.querySelector(".saved-posters-grid")
+var savedPosterGrid = document.querySelector(".saved-posters-grid");
 
 var userImage = document.getElementById("poster-image-url")
 var userTitle = document.getElementById("poster-title")
@@ -125,7 +125,7 @@ var currentPoster;
 // event listeners go here 👇
 window.addEventListener('load', showRandomPoster);
 randomBtn.addEventListener('click', showRandomPoster);
-// saveBtn.addEventListener('click',saveNewPoster);
+saveBtn.addEventListener('click',saveNewPoster);
 showSaveBtn.addEventListener('click', saveHelper);
 makeFormBtn.addEventListener('click', showNewView);
 showMainBtn.addEventListener('click', showHomeView );
@@ -141,6 +141,7 @@ makePosterBtn.addEventListener('click', function() {
 
 
 
+
 // functions and event handlers go here 👇
 function showRandomPoster() {
   currentPoster = new Poster(
@@ -151,8 +152,8 @@ function showRandomPoster() {
   newPoster();
 }
 
-function myPoster(newPoster, newTitle, newQuote){
-  currentPoster = new Poster(newPoster,newTitle,newQuote)
+function myPoster(newPoster, newTitle, newQuote) {
+  currentPoster = new Poster (newPoster,newTitle,newQuote)
 };
 
 function newPoster(){
@@ -185,30 +186,27 @@ function showNewView(){
   savedView.classList.add("hidden");
 }
 
-function displayPoster(){
-  var display = ""
-  for (var i=0; i< savedPosters.lenght;i++ ) {
-    display += `<article class = "mini-poster"> 
-    <img class="poster-img" id=${savedPosters[i].id} src="${savedPosters[i].imageURL}" alt="Nothing to see here">
-    <h2 class="poster-title">${savePoster[i].title}
-    </h2>
-    <h4 class="poster-quote">${savePoster[i].quote}
-    </h4>
-    </article>`
+function displayPoster() {
+  var display = "";
+  for (var i = 0; i < savedPosters.length; i++) {
+    display += `<article class="mini-poster">
+      <img class="poster-img" id=${savedPosters[i].id} src="${savedPosters[i].imageURL}" alt="nothin' to see here">
+      <h2 class="poster-title">${savedPosters[i].title}</h2>
+      <h4 class="poster-quote">${savedPosters[i].quote}</h4>
+      </article>`
   }
-  savedPostersGrid.innerHTML = display
+  savedPosterGrid.innerHTML = display;
+};
+function saveNewPoster(){
+  if (!savedPosters.includes(currentPoster)){
+    savedPosters.push(currentPoster)
+  }
 }
-
-
-
 
 function saveHelper(){
-  displayPoster();
   showSavedView();
-
+  displayPoster();
 }
-
-
 
 
 // (we've provided one for you to get you started)!

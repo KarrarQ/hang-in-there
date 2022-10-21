@@ -12,8 +12,8 @@
 [View Hang In THere Poster Generator](https://karrarq.github.io/hang-in-there/)
 
 ### Screenshots of Webpage
-![image0](./readme-imgs/Froggy.png)
-![image1](./readme-imgs/Saved.png)
+![Froggy](https://user-images.githubusercontent.com/108508596/197290206-65b7d148-b9a2-41d2-bc61-8b770ae63f96.png)
+![Saved](https://user-images.githubusercontent.com/108508596/197290240-3db577a0-5306-4234-ab69-009ad3143c75.png)
 
 ### Context:
 - MOD1 Students
